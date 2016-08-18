@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.webservice.its" xmlns:soapenc12="http://www.w3.org/2003/05/soap-encoding" xmlns:tns="http://service.webservice.its" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc11="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+  <wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://service.webservice.its">
+<xsd:element name="WriteVehicleInfoWithPhoto">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in2" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in3" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in4" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in5" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in6" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in7" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in8" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in9" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in10" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in11" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in12" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in13" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in14" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="WriteVehicleInfoWithPhotoResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="WriteVehicleInfo">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in2" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in3" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in4" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in5" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in6" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in7" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in8" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in9" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in10" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in11" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in12" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in13" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="WriteVehicleInfoResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="QueryServerTime">
+<xsd:complexType/>
+</xsd:element>
+<xsd:element name="QueryServerTimeResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="WriteSurveilInfo">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in2" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in3" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in4" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in5" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in6" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in7" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in8" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in9" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in10" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in11" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in12" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in13" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in14" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in15" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in16" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in17" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="WriteSurveilInfoResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="WriteFileTest">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="WriteFileTestResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="InitWriteVehInfo">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="InitWriteVehInfoResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="WriteFileTestRequest">
+    <wsdl:part name="parameters" element="tns:WriteFileTest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryServerTimeResponse">
+    <wsdl:part name="parameters" element="tns:QueryServerTimeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WriteSurveilInfoRequest">
+    <wsdl:part name="parameters" element="tns:WriteSurveilInfo">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WriteVehicleInfoWithPhotoResponse">
+    <wsdl:part name="parameters" element="tns:WriteVehicleInfoWithPhotoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InitWriteVehInfoRequest">
+    <wsdl:part name="parameters" element="tns:InitWriteVehInfo">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WriteSurveilInfoResponse">
+    <wsdl:part name="parameters" element="tns:WriteSurveilInfoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryServerTimeRequest">
+    <wsdl:part name="parameters" element="tns:QueryServerTime">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WriteVehicleInfoWithPhotoRequest">
+    <wsdl:part name="parameters" element="tns:WriteVehicleInfoWithPhoto">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WriteFileTestResponse">
+    <wsdl:part name="parameters" element="tns:WriteFileTestResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InitWriteVehInfoResponse">
+    <wsdl:part name="parameters" element="tns:InitWriteVehInfoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WriteVehicleInfoRequest">
+    <wsdl:part name="parameters" element="tns:WriteVehicleInfo">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WriteVehicleInfoResponse">
+    <wsdl:part name="parameters" element="tns:WriteVehicleInfoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="VehInfoServicePortType">
+    <wsdl:operation name="WriteVehicleInfoWithPhoto">
+      <wsdl:input name="WriteVehicleInfoWithPhotoRequest" message="tns:WriteVehicleInfoWithPhotoRequest">
+    </wsdl:input>
+      <wsdl:output name="WriteVehicleInfoWithPhotoResponse" message="tns:WriteVehicleInfoWithPhotoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteVehicleInfo">
+      <wsdl:input name="WriteVehicleInfoRequest" message="tns:WriteVehicleInfoRequest">
+    </wsdl:input>
+      <wsdl:output name="WriteVehicleInfoResponse" message="tns:WriteVehicleInfoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryServerTime">
+      <wsdl:input name="QueryServerTimeRequest" message="tns:QueryServerTimeRequest">
+    </wsdl:input>
+      <wsdl:output name="QueryServerTimeResponse" message="tns:QueryServerTimeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteSurveilInfo">
+      <wsdl:input name="WriteSurveilInfoRequest" message="tns:WriteSurveilInfoRequest">
+    </wsdl:input>
+      <wsdl:output name="WriteSurveilInfoResponse" message="tns:WriteSurveilInfoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteFileTest">
+      <wsdl:input name="WriteFileTestRequest" message="tns:WriteFileTestRequest">
+    </wsdl:input>
+      <wsdl:output name="WriteFileTestResponse" message="tns:WriteFileTestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitWriteVehInfo">
+      <wsdl:input name="InitWriteVehInfoRequest" message="tns:InitWriteVehInfoRequest">
+    </wsdl:input>
+      <wsdl:output name="InitWriteVehInfoResponse" message="tns:InitWriteVehInfoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VehInfoServiceHttpBinding" type="tns:VehInfoServicePortType">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="WriteVehicleInfoWithPhoto">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="WriteVehicleInfoWithPhotoRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="WriteVehicleInfoWithPhotoResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteVehicleInfo">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="WriteVehicleInfoRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="WriteVehicleInfoResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryServerTime">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="QueryServerTimeRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="QueryServerTimeResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteSurveilInfo">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="WriteSurveilInfoRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="WriteSurveilInfoResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteFileTest">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="WriteFileTestRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="WriteFileTestResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitWriteVehInfo">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="InitWriteVehInfoRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="InitWriteVehInfoResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VehInfoService">
+    <wsdl:port name="VehInfoServiceHttpPort" binding="tns:VehInfoServiceHttpBinding">
+      <wsdlsoap:address location="http://10.10.76.147/services/VehInfoService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * 系统名       智能交通WebService服务
+ * 描述         Web应用程序配置文件
+ * @Author    Tony Lin
+ * 版本号       Version 1.0
+ * 更新履历     2011-01-25：创建
+-->
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <!-- 过车服务配置Start -->
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="urlMap">
+            <map>
+                <entry key="/VehInfoService">
+                    <ref bean="vehInfoService"/>
+                </entry>
+            </map>
+        </property>
+    </bean>
+    <bean id="vehInfoService" class="org.codehaus.xfire.spring.remoting.XFireExporter">
+        <property name="serviceFactory">
+            <ref bean="xfire.serviceFactory"/>
+        </property>
+        <property name="xfire">
+            <ref bean="xfire"/>
+        </property>
+        <property name="serviceBean">
+            <ref bean="vehInfoServiceBean"/>
+        </property>
+        <property name="serviceClass">
+            <value>its.webservice.service.VehInfoService</value>
+        </property>
+    </bean>
+    <!-- 过车服务配置End -->
+    
+    <!-- <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="urlMap">
+            <map>
+                <entry key="/MTOMService">
+                    <ref bean="mTOMService"/>
+                </entry>
+            </map>
+        </property>
+    </bean>
+    <bean id="mTOMService" class="org.codehaus.xfire.spring.remoting.XFireExporter">
+        <property name="serviceFactory">
+            <ref bean="xfire.serviceFactory"/>
+        </property>
+        <property name="xfire">
+            <ref bean="xfire"/>
+        </property>
+        <property name="serviceBean">
+            <ref bean="mtomServerBean"/>
+        </property>
+        <property name="serviceClass">
+            <value>its.webservice.service.MTOMService</value>
+        </property>
+    </bean> -->
+    
+</beans>

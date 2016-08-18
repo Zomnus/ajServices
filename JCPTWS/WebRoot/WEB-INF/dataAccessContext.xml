@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * 系统名       智能交通WebService服务
+ * 描述         Web应用程序配置文件
+ * @Author    Tony Lin
+ * 版本号       Version 1.0
+ * 更新履历     2011-01-25：创建
+-->
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+  <!-- 通过JNDI 使用应用服务器 的Connection Pool-->
+  <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+    <property name="jndiName" value="java:comp/env/jdbc/jcpt"/>
+  </bean>
+
+  <!-- Transaction manager for a single JDBC DataSource -->
+  <!-- (see dataAccessContext-jta.xml for an alternative) -->
+  <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <property name="dataSource" ref="dataSource"/>
+  </bean>
+  
+  <!-- 系统初始化DAO配置 -->
+  <bean id="applicationDao" class="its.webservice.dao.impl.JdbcApplicationDao">
+    <property name="dataSource" ref="dataSource" />
+  </bean>
+
+  <!-- 用户DAO配置 -->
+  <bean id="userDao" class="its.webservice.dao.impl.UserDaoImpl">
+    <property name="dataSource" ref="dataSource" />
+  </bean>
+  
+  <!-- 过车数据DAO配置 -->
+  <bean id="vehPassDao" class="its.webservice.dao.impl.VehPassDaoImpl">
+    <property name="dataSource" ref="dataSource" />
+  </bean>
+  
+  <!-- 网络检测DAO配置 -->
+  <bean id="connectionDao" class="its.webservice.dao.impl.JdbcConnectionDao">
+    <property name="dataSource" ref="dataSource" />
+  </bean>
+</beans>

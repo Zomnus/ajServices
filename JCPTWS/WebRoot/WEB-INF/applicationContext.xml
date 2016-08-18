@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * 系统名       智能交通WebService服务
+ * 描述         Web应用程序配置文件
+ * @Author    Tony Lin
+ * 版本号       Version 1.0
+ * 更新履历     2011-01-25：创建
+-->
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <bean id="txProxyTemplateJdbc" abstract="true" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager" />
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="save*">PROPAGATION_REQUIRED,-MyCheckedException</prop>
+        <prop key="insert*">PROPAGATION_REQUIRED,-MyCheckedException</prop>
+        <prop key="add*">PROPAGATION_REQUIRED,-MyCheckedException</prop>
+        <prop key="do*">PROPAGATION_REQUIRED,-MyCheckedException</prop>
+        <prop key="update*">PROPAGATION_REQUIRED,-MyCheckedException</prop>
+        <prop key="delete*">PROPAGATION_REQUIRED,-MyCheckedException</prop>
+        <prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+      </props>
+    </property>
+  </bean>
+  
+  <!-- 系统初始化 配置 -->
+  <bean id="appInition" class="its.webservice.appinit.AppInition" init-method="initialize">
+  	<property name="applicationDao" ref="applicationDao"/>
+  </bean>
+  
+  <!-- 过车SeviceBean 配置 -->
+  <bean id="vehInfoServiceBean" parent="txProxyTemplateJdbc">
+    <property name="target">
+      <bean class="its.webservice.service.VehInfoServiceImpl">
+        <property name="vehPassDao" ref="vehPassDao"/>
+        <!-- 图片服务器存储图片路劲前缀，如D:/ftpserver/picserver -->
+        <property name="imaPath"><value></value></property>
+        <!-- 图片服务器FTP服务前缀，如ftp://supcon:supcon@10.10.76.70:21 -->
+        <property name="ftpPre"><value></value></property>
+      </bean>
+    </property>
+  </bean>
+  
+  <!-- 文件上传 -->
+  <!-- <bean id="mtomServerBean" parent="txProxyTemplateJdbc">
+    <property name="target">
+      <bean class="its.webservice.service.MTOMServiceImpl">
+        <property name="vehPassDao" ref="vehPassDao"/>
+      </bean>
+    </property>
+  </bean> -->
+  
+  <!-- 图片管理SeviceBean 配置 -->
+  <bean id="fileMaintanceService" parent="txProxyTemplateJdbc">
+    <property name="target">
+      <bean class="its.webservice.service.FileMaintanceServiceImpl">
+      </bean>
+    </property>
+  </bean>
+  
+      <!-- 图片定时删除 Start -->
+    <bean id="fileMaintance" class="its.webservice.job.FileMaintanceJob">
+      <property name="fileMaintanceService"  ref="fileMaintanceService" />
+      <!-- 图片服务器存储图片路劲前缀，如D:/ftpserver/picserver -->
+      <property name="imaPath"><value></value></property>
+    </bean>
+    <bean id="fileMaintanceJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+      <property name="targetObject" ref="fileMaintance" />
+      <property name="targetMethod" value="deleteHistoryFile" />
+      <!-- 默认情况下，jobs在并行的方式下运行，为了使得jobs不并发运行，concurrent标记为false -->
+      <property name="concurrent" value="false" />
+    </bean>
+    <bean id="fileMaintanceTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+      <property name="jobDetail" ref="fileMaintanceJob" />
+      <!-- 每天1点钟运行  -->
+      <property name="cronExpression" value="0 0 1 * * ?" />
+      <!-- 测试每2分钟执行 -->
+      <!-- <property name="cronExpression" value="0 0/2 * * * ?" /> -->
+    </bean>
+    <bean id="schedulerFactory"  class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+	    <property name="triggers">
+	      <list>
+	        <ref bean="fileMaintanceTrigger" />
+	      </list>
+	    </property>
+        <!-- <property name="autoStartup" value="false"/> -->
+    </bean>
+    <!-- 图片定时删除 End -->
+  <!-- 定时初始化AppInitConstants配置 -->
+  <bean id="appInitConstantsTimerThread"  class="its.webservice.util.AppInitConstantsTimerThread" init-method="initialize">
+    	<property name="applicationDao" ref="applicationDao"/>
+  </bean> 
+   <!-- 网络定时检测 -->
+ <!-- <bean id="wftimerThread"  class="its.webservice.util.TimerThread" init-method="checkDeviceStatus">
+    <property name="connectionDao"  ref="connectionDao" />
+  </bean>-->
+</beans>
