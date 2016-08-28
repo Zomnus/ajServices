@@ -429,7 +429,7 @@ public class VehInfoServiceImpl implements VehInfoService {
 						//将图片保存到图片服务器 并返回图片保存地址
 						String picKey =httpPicSaver.save(bytes, cltpName);
 						tztpHttpPath = zwurl+picKey;
-						System.out.println("+tztpHttpPath"+tztpHttpPath);
+						//System.out.println("+tztpHttpPath"+tztpHttpPath);
 					}
 		        	if(null != QMTP && !"".equals(QMTP)){//处理第二个文件
 		        		//Modified by Tony Lin on 2012-8-1
@@ -524,12 +524,12 @@ public class VehInfoServiceImpl implements VehInfoService {
 				vehPassDao.WriteBMDVehicleInfoWithPhoto(SBBH,FXBH,HPHM,HPZL,JGSJ,CLSD,HPYS,CSYS,CLLX,tztpFtpPath,qmtpFtpPath,hptpFtpPath,CDH,XS);
 			}else{
 				//推送给大数据，不入oracle start
-			//	boolean isInsert = vehPassDao.WriteVehicleInfoWithPhoto(SBBH,FXBH,HPHM,HPZL,JGSJ,CLSD,HPYS,CSYS,CLLX,tztpFtpPath,qmtpFtpPath,hptpFtpPath,CDH,XS);
+				boolean isInsert = vehPassDao.WriteVehicleInfoWithPhoto(SBBH,FXBH,HPHM,HPZL,JGSJ,CLSD,HPYS,CSYS,CLLX,tztpHttpPath,hptpHttpPath,hptpHttpPath,CDH,XS);
 				
 				if ("无法识别".equals(HPHM)) {
 					HPHM="-";
 				}		
-				System.out.println("****************"+FXBH+"*******************");
+				//System.out.println("****************"+FXBH+"*******************");
 				String result=PassPostUtil.postClientUploadTgs(AppInitConstants.uploadForBigDate.toString(), "999999", 
 						SBBH, SBBH, HPHM, HPZL, HPYS,CLLX,
 						JGSJ, FXBH, CDH, CLSD,"1", "1", "2","",
@@ -1143,6 +1143,7 @@ public class VehInfoServiceImpl implements VehInfoService {
 				log.debug("违法数据写入成功！");
 			}else{
 				returnStr = "违法数据写入失败，请检查数据字段是否正确！";
+				return returnStr;
 			}
 			if("1".equals(isWriteGA)){
 				//将数据写入数据库临时表(WFSJB_YSH_TEMP)
@@ -1151,6 +1152,7 @@ public class VehInfoServiceImpl implements VehInfoService {
 					log.debug("违法数据写入临时表成功！");
 				}else{
 					returnStr = "违法数据写入临时表失败，请检查数据字段是否正确！";
+					return returnStr;
 				}
 			}
 		}catch(Exception e){
@@ -1253,13 +1255,14 @@ public class VehInfoServiceImpl implements VehInfoService {
 		String fxName = "";
 		String lkName = "";
 		String xc_path = "";
-		
+		/*
 		if("shangyu".equals(AppInitConstants.DEPLOY_PLACE)){
 			fxName = ItsUtility.getDictionaryValue(AppInitConstants.DIRECTION_TYPE_ID, FXBH);
 			lkName = vehPassDao.getDeviceNameByCode(SBBH);
 			xc_path = "/ZKGQ/"+lkName+"/"+fxName+"/";
 			log.debug("上传信电FTP路径-----------------------------"+xc_path);
 		}
+		*/
 		
 		if("".equals(imaPath)){
 			imaPath = AppInitConstants.IMG_SERVER_ABS_FILE_PATH;
@@ -1295,7 +1298,7 @@ public class VehInfoServiceImpl implements VehInfoService {
 		String gaVideoFtpPath = "";
 		String isWriteGA = SystemConfig.getConfigInfomation("isWriteGA");
 		
-		
+		/*
 		
 		if(AppInitConstants.DEPLOY_PLACE.equals("yuhuan")){  // by lvhua add 2013-05-20
 			if(StringUtils.isNotEmpty(FXBH)){
@@ -1333,6 +1336,7 @@ public class VehInfoServiceImpl implements VehInfoService {
 				log.error("不存在该设备编号:"+SBBH);
 			}
 		}
+		*/
 		
 		try{
 			try {
@@ -1505,6 +1509,7 @@ public class VehInfoServiceImpl implements VehInfoService {
 					} 
 		        	cltp3FtpPath = ftpPre + virtualRoute  + fileNewPath +cltpName;
 		        	gaCltp3FtpPath = gaFtpPre + virtualRoute + fileNewPath +cltpName;
+		        	/*
 		        	if("shangyu".equals(AppInitConstants.DEPLOY_PLACE)){
 		        		log.debug("byte3_length---------"+bytes.length);
 		        		input = new  ByteArrayInputStream(bytes);
@@ -1516,7 +1521,7 @@ public class VehInfoServiceImpl implements VehInfoService {
 		        			log.debug("上传信电FTP图片3："+filename+" 失败!");
 		        		}
 		        		input.close();
-		        	}
+		        	}*/
 	        	}
 	        	if(null != VideoFile &&  !"".equals(VideoFile)){//处理录像文件
 	        		//cltpName = CJFS + "_" + SBBH + "_" +  ItsUtility.DateToString(checkJgsj, "yyyyMMddHHmmss") + "_" + FXBH + "_" + CDH + "." + VideoType;
@@ -1566,6 +1571,7 @@ public class VehInfoServiceImpl implements VehInfoService {
 	                     fos.close();
 	                 }
 	                 catch (Exception e){
+	                	 e.printStackTrace();
 	                 }
 	             }
 	         }
@@ -1575,6 +1581,7 @@ public class VehInfoServiceImpl implements VehInfoService {
 				log.debug("违法数据写入成功！");
 			}else{
 				returnStr = "违法数据写入失败，请检查数据字段是否正确！";
+				return returnStr;
 			}
 			if("1".equals(isWriteGA)){
 				boolean isInsertTemp = vehPassDao.WriteSurveilInfoExtTemp(SBBH,FXBH,HPHM,HPZL,JGSJ,CLSD,HPYS,CSYS,CLLX,CDH,XS,gaCltp1FtpPath,gaCltp2FtpPath,gaCltp3FtpPath,CltpType,gaVideoFtpPath,VideoType,CJFS,RedLightTime,RedLightDuration,ViolationType);
@@ -1582,6 +1589,7 @@ public class VehInfoServiceImpl implements VehInfoService {
 					log.debug("违法数据写入临时表成功！");
 				}else{
 					returnStr = "违法数据写入临时表失败，请检查数据字段是否正确！";
+					return returnStr;
 				}
 			}
 			
