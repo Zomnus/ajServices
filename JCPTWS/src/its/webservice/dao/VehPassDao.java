@@ -190,7 +190,10 @@ public interface VehPassDao {
 	 */
 	public boolean WriteSurveilInfo(String SBBH,String FXBH,String HPHM,String HPZL,String JGSJ,String CLSD,String HPYS,String CSYS,String CLLX,String CDH,String XS,String Cltp1,String Cltp2,String Cltp3,String CltpType,String VideoFile,String VideoType,String CJFS);
 	
-	public boolean WriteSurveilInfoExt(String SBBH,String FXBH,String HPHM,String HPZL,String JGSJ,String CLSD,String HPYS,String CSYS,String CLLX,String CDH,String XS,String Cltp1,String Cltp2,String Cltp3,String CltpType,String VideoFile,String VideoType,String CJFS,String RedLightTime,String RedLightDuration,String ViolationType);
+	public boolean WriteSurveilInfoExt(String SBBH,String FXBH,String HPHM,String HPZL,String JGSJ,String CLSD,String HPYS,String CSYS,String CLLX,String CDH,String XS,String Cltp1,
+			String Cltp2,String Cltp3,String CltpType,String VideoFile,String VideoType,
+			String CJFS,String RedLightTime,String RedLightDuration,String ViolationType,
+			String wfdd,String wfdz,String check,String jyr,String jysj,String cjr,String cjjg);
 	
 	/**
 	 * 检测是否为布控车辆
@@ -306,7 +309,9 @@ public interface VehPassDao {
 	 */
 	public boolean WriteSurveilInfoTemp(String SBBH,String FXBH,String HPHM,String HPZL,String JGSJ,String CLSD,String HPYS,String CSYS,String CLLX,String CDH,String XS,String Cltp1,String Cltp2,String Cltp3,String CltpType,String VideoFile,String VideoType,String CJFS);
 
-	public boolean WriteSurveilInfoExtTemp(String SBBH,String FXBH,String HPHM,String HPZL,String JGSJ,String CLSD,String HPYS,String CSYS,String CLLX,String CDH,String XS,String Cltp1,String Cltp2,String Cltp3,String CltpType,String VideoFile,String VideoType,String CJFS,String RedLightTime,String RedLightDuration,String ViolationType);
+	public boolean WriteSurveilInfoExtTemp(String SBBH,String FXBH,String HPHM,String HPZL,String JGSJ,String CLSD,String HPYS,String CSYS,String CLLX,String CDH,String XS,String Cltp1,String Cltp2,String Cltp3,String CltpType,String VideoFile,String VideoType,
+			String CJFS,String RedLightTime,String RedLightDuration,String ViolationType,String wfdd,String wfdz,
+			String check,String jyr,String jysj,String cjr,String cjjg);
 
 	public boolean WriteBMDVehicleInfoWithPhoto(String SBBH,String FXBH,String HPHM,String HPZL,String JGSJ,String CLSD,String HPYS,String CSYS,String CLLX,String TZTPFtpPath,String QMTPFtpPath,String HPTPFtpPath,String CDH,String XS);
 	

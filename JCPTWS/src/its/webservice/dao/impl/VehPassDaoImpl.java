@@ -563,13 +563,15 @@ public class VehPassDaoImpl extends JdbcTemplate implements VehPassDao {
 	
 	public boolean WriteSurveilInfoExt(String SBBH,String FXBH,String HPHM,String HPZL,String JGSJ,String CLSD,String HPYS,
 			String CSYS,String CLLX,String CDH,String XS,String Cltp1Path,String Cltp2Path,String Cltp3Path,String CltpType,String VideoFilePath,String VideoType,String CJFS,
-			String RedLightTime,String RedLightDuration,String ViolationType){
+			String RedLightTime,String RedLightDuration,String ViolationType,
+			String wfdd,String wfdz,String IsCheck,String jyr,String jysj,String cjr,String cjjg){
 		log.debug("VehPassDaoImpl.WriteSurveilInfoExt() Start......");
 		
 		int insertRow = 0;
 		String insertSql = "";
-		insertSql = "insert into WFSJB_YSH(SBBH,FXBH,HPHM,HPZL,WFSJ,SCZ,BZZ,HPYS,CSYS,CLLX,CDH,ZPSTR1,ZPSTR2,ZPSTR3,SPDZ,CJFS,WFXW,HDLQSJ,HDCXSJ) " +
-		" values('"+SBBH+"','"+FXBH+"','"+HPHM+"','"+HPZL+"',to_date('"+JGSJ+"','yyyy-mm-dd hh24:mi:ss'),'"+CLSD+"','"+XS+"','"+HPYS+"','"+CSYS+"','"+CLLX+"','"+CDH+"','"+Cltp1Path+"','"+Cltp2Path+"','"+Cltp3Path+"','"+VideoFilePath+"','"+CJFS+"','"+ViolationType+"',to_date('"+RedLightTime+"','yyyy-mm-dd hh24:mi:ss'),'"+RedLightDuration+"')";
+		insertSql = "insert into WFSJB_YSH(SBBH,FXBH,HPHM,HPZL,WFSJ,SCZ,BZZ,HPYS,CSYS,CLLX,CDH,ZPSTR1,ZPSTR2,ZPSTR3,SPDZ,CJFS,WFXW,HDLQSJ,HDCXSJ,WFDD,WFDZ,IS_CHECK,JYR,JYSJ,CJR,CJJG) " +
+		" values('"+SBBH+"','"+FXBH+"','"+HPHM+"','"+HPZL+"',to_date('"+JGSJ+"','yyyy-mm-dd hh24:mi:ss'),'"+CLSD+"','"+XS+"','"+HPYS+"','"+CSYS+"','"+CLLX+"','"+CDH+"','"+Cltp1Path+"','"+Cltp2Path+"','"+Cltp3Path+"','"+VideoFilePath+"','"+CJFS+"','"+ViolationType+"',to_date('"+RedLightTime+"','yyyy-mm-dd hh24:mi:ss'),'"+RedLightDuration+"','"
+				+ ""+wfdd+"','"+wfdz+"','"+IsCheck+"','"+jyr+"',to_date('"+jysj+"','yyyy-mm-dd hh24:mi:ss'),'"+cjr+"','"+cjjg+"')";
 		
 		log.debug("WriteSurveilInfo.insertSql= :" + insertSql);
 		insertRow = this.update(insertSql);
@@ -916,13 +918,15 @@ public class VehPassDaoImpl extends JdbcTemplate implements VehPassDao {
 	
 	public boolean WriteSurveilInfoExtTemp(String SBBH,String FXBH,String HPHM,String HPZL,String JGSJ,String CLSD,String HPYS,
 			String CSYS,String CLLX,String CDH,String XS,String Cltp1Path,String Cltp2Path,String Cltp3Path,String CltpType,String VideoFilePath,String VideoType,String CJFS,
-			String RedLightTime,String RedLightDuration,String ViolationType){
+			String RedLightTime,String RedLightDuration,String ViolationType,
+			String wfdd,String wfdz,String IsCheck,String jyr,String jysj,String cjr,String cjjg){
 		log.debug("VehPassDaoImpl.WriteSurveilInfoExtTemp() Start......");
 		
 		int insertRow = 0;
 		String insertSql = "";
-		insertSql = "insert into WFSJB_YSH_TEMP(SBBH,FXBH,HPHM,HPZL,WFSJ,SCZ,BZZ,HPYS,CSYS,CLLX,CDH,ZPSTR1,ZPSTR2,ZPSTR3,SPDZ,CJFS,WFXW,HDLQSJ,HDCXSJ) " +
-		" values('"+SBBH+"','"+FXBH+"','"+HPHM+"','"+HPZL+"',to_date('"+JGSJ+"','yyyy-mm-dd hh24:mi:ss'),'"+CLSD+"','"+XS+"','"+HPYS+"','"+CSYS+"','"+CLLX+"','"+CDH+"','"+Cltp1Path+"','"+Cltp2Path+"','"+Cltp3Path+"','"+VideoFilePath+"','"+CJFS+"','"+ViolationType+"',to_date('"+RedLightTime+"','yyyy-mm-dd hh24:mi:ss'),'"+RedLightDuration+"')";
+		insertSql = "insert into WFSJB_YSH_TEMP(SBBH,FXBH,HPHM,HPZL,WFSJ,SCZ,BZZ,HPYS,CSYS,CLLX,CDH,ZPSTR1,ZPSTR2,ZPSTR3,SPDZ,CJFS,WFXW,HDLQSJ,HDCXSJ,WFDD,WFDZ,IS_CHECK,JYR,JYSJ,CJR,CJJG) " +
+		" values('"+SBBH+"','"+FXBH+"','"+HPHM+"','"+HPZL+"',to_date('"+JGSJ+"','yyyy-mm-dd hh24:mi:ss'),'"+CLSD+"','"+XS+"','"+HPYS+"','"+CSYS+"','"+CLLX+"','"+CDH+"','"+Cltp1Path+"','"+Cltp2Path+"','"+Cltp3Path+"','"+VideoFilePath+"','"+CJFS+"','"+ViolationType+"',to_date('"+RedLightTime+"','yyyy-mm-dd hh24:mi:ss'),'"+RedLightDuration+"','"+wfdd+"','"+wfdz+"',"
+				+ "'"+IsCheck+"','"+jyr+"',to_date('"+jysj+"','yyyy-mm-dd hh24:mi:ss'),'"+cjr+"','"+cjjg+"')";
 		
 		log.debug("WriteSurveilInfo.insertSql= :" + insertSql);
 		insertRow = this.update(insertSql);

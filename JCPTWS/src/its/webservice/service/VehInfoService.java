@@ -43,19 +43,6 @@ public interface VehInfoService {
 	 */
 	public String WriteVehicleInfoWithPhoto(String SBBH,String FXBH,String HPHM,String HPZL,String JGSJ,String CLSD,String HPYS,String CSYS,String CLLX,String TZTP,String QMTP,String HPTP,String TPTYPE,String CDH,String XS);
 	
-	/**
-	 * 布控报警数据写入接口服务
-	 * @param vehInfo
-	 * @return String
-	 */
-	//public String WriteAlarmVehInfo(VehicleInfo vehInfo);
-	
-	/**
-	 * 黑名单数据写入接口服务
-	 * @param blackNameInfo
-	 * @return
-	 */
-	//public String WriteBlackName(BlackNameInfo blackNameInfo);
 
 	/**
 	 * 查询远程服务器时间
@@ -63,16 +50,6 @@ public interface VehInfoService {
 	 */
 	public String QueryServerTime();
 	
-	/**
-	 * 设备状态写入接口服务
-	 * @return
-	 */
-	//public String WriteDeviceStat(DeviceStatInfo deviceStatInfo);
-	
-	/**
-	 * test for 文件上传
-	 */
-	public String WriteFileTest(String fileName,String strFileBase64);
 	
 	/**
 	 * 违法数据(包括卡口、电警)写入接口
@@ -120,7 +97,10 @@ public interface VehInfoService {
 	 * @param ViolationType
 	 * @return
 	 */
-	public String WriteSurveilInfoExt(String SBBH,String FXBH,String HPHM,String HPZL,String JGSJ,String CLSD,String HPYS,String CSYS,String CLLX,String CDH,String XS,String Cltp1,String Cltp2,String Cltp3,String CltpType,String VideoFile,String VideoType,String CJFS,String RedLightTime,String RedLightDuration,String ViolationType);
+	public String WriteSurveilInfoExt(String SBBH,String FXBH,String HPHM,String HPZL,String JGSJ,String CLSD,
+			String HPYS,String CSYS,String CLLX,String CDH,String XS,String Cltp1,String Cltp2,String Cltp3,
+			String CltpType,String VideoFile,String VideoType,String CJFS,String RedLightTime,
+			String RedLightDuration,String ViolationType,String wfdd,String wfdz,
+			String check,String jyr,String jysj,String cjr,String cjjg);
 	
-	public String writeWbRecord(String wbjc_code, String cdh, int speed_aver, int speed_lon_veh,int speed_mid_veh,int speed_sht_veh,int volume_veh,int volume_lon_veh,int volume_mid_veh,int volume_sht_veh,int occupy_veh,int occupy_lon_veh,int occupy_mid_veh,int occupy_sht_veh,int headway_time,String gather_time);
-}
+	}

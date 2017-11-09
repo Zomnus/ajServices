@@ -65,13 +65,13 @@ public class AppInition implements InitializingBean,ApplicationContextAware{
     //	log.error("实时报警监听线程启动……");
 	//	log.debug("App.afterPropertiesSet init End .....................");
 		
-		SendMQInfo mqSend=new SendMQInfo();
-		new Thread(mqSend).start();
-		log.error("实时过车带图片发送MQ启动……");
-		
-		log.error("重写图片线程启动");
-		SendReWritePicInfo reWritePicInfo = new SendReWritePicInfo();
-		new Thread(reWritePicInfo).start();
+//		SendMQInfo mqSend=new SendMQInfo();
+//		new Thread(mqSend).start();
+//		log.error("实时过车带图片发送MQ启动……");
+//		
+//		log.error("重写图片线程启动");
+//		SendReWritePicInfo reWritePicInfo = new SendReWritePicInfo();
+//		new Thread(reWritePicInfo).start();
 		
 	}
     

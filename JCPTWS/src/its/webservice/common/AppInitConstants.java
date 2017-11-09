@@ -142,6 +142,7 @@ public class AppInitConstants {
     public static String HTTP_WF_PIC_IP_ZW  = "33.155.81.211";
     public static String HTTP_WF_PIC_IP_GA  = "10.121.77.110";
     public static String HTTP_KK_PIC_IP_ZW  = "33.155.81.200";
+    public static String HTTP_KK_PIC_IP_GA  = "10.121.77.145";
     public static String HTTP_PIC_PORT  = "8001";
     
 
