@@ -30,13 +30,6 @@ public interface VehInfoService {
 	public String InitWriteVehInfo(String deviceCode,String deviceKey);
 	
 	/**
-	 * 过车数据写入接口服务
-	 * @param 
-	 * @return String
-	 */
-	public String WriteVehicleInfo(String SBBH,String FXBH,String HPHM,String HPZL,String JGSJ,String CLSD,String HPYS,String CSYS,String CLLX,String TZTP,String QMTP,String HPTP,String CDH,String XS);
-	
-	/**
 	 * 过车数据(带图片)写入接口服务
 	 * 
 	 * @return String
@@ -51,51 +44,9 @@ public interface VehInfoService {
 	public String QueryServerTime();
 	
 	
-	/**
-	 * 违法数据(包括卡口、电警)写入接口
-	 * @param SBBH
-	 * @param FXBH
-	 * @param HPHM
-	 * @param HPZL
-	 * @param JGSJ
-	 * @param CLSD
-	 * @param HPYS
-	 * @param CSYS
-	 * @param CLLX
-	 * @param CDH
-	 * @param XS
-	 * @param Cltp1
-	 * @param Cltp2
-	 * @param Cltp3
-	 * @param CltpType
-	 * @param CJFS
-	 * @return
-	 */
-	public String WriteSurveilInfo(String SBBH,String FXBH,String HPHM,String HPZL,String JGSJ,String CLSD,String HPYS,String CSYS,String CLLX,String CDH,String XS,String Cltp1,String Cltp2,String Cltp3,String CltpType,String VideoFile,String VideoType,String CJFS);
-	
 	
 	/**
 	 * 新违法数据(包括卡口、电警)写入接口，增加RedLightTime、RedLightDuration、ViolationType
-	 * @param SBBH
-	 * @param FXBH
-	 * @param HPHM
-	 * @param HPZL
-	 * @param JGSJ
-	 * @param CLSD
-	 * @param HPYS
-	 * @param CSYS
-	 * @param CLLX
-	 * @param CDH
-	 * @param XS
-	 * @param Cltp1
-	 * @param Cltp2
-	 * @param Cltp3
-	 * @param CltpType
-	 * @param CJFS
-	 * @param RedLightTime
-	 * @param RedLightDuration
-	 * @param ViolationType
-	 * @return
 	 */
 	public String WriteSurveilInfoExt(String SBBH,String FXBH,String HPHM,String HPZL,String JGSJ,String CLSD,
 			String HPYS,String CSYS,String CLLX,String CDH,String XS,String Cltp1,String Cltp2,String Cltp3,
